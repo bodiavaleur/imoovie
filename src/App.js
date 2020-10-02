@@ -18,7 +18,7 @@ export function App() {
       <GlobalStyle />
       <Header />
       <HomePage>
-        <ContentContainer image='mainBackground.png'>
+        <ContentContainer image='mainBackground.png' large>
           <TopSection>
             <Heading>Welcome to iMoovie</Heading>
             <Title>Explore millions of movies and TV shows.</Title>
@@ -28,9 +28,12 @@ export function App() {
             </TextSmall>
           </TopSection>
         </ContentContainer>
-        <ContentContainer />
-        <ContentContainer />
-        <ContentContainer />
+        <ContentContainer>te</ContentContainer>
+        <ContentContainer>st</ContentContainer>
+        <ContentContainer>te</ContentContainer>
+        <ContentContainer>te</ContentContainer>
+        <ContentContainer>st</ContentContainer>
+        <ContentContainer>te</ContentContainer>
       </HomePage>
     </Router>
   );

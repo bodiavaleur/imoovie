@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const TopSectionUI = styled.div`
   display: flex;
-  height: 75%;
+  height: 50%;
   width: 100%;
   flex-flow: column nowrap;
   justify-content: space-evenly;
-  padding: 1rem;
+  padding: 0 1rem;
 `;

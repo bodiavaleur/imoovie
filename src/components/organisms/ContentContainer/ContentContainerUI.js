@@ -14,4 +14,16 @@ export const ContentContainerUI = styled.section`
     background: url(${image});
     background-size: cover;
   `}
+
+  ${({ large }) =>
+    large &&
+    `
+    min-height: 25rem;
+  `}
+
+  ${({ small }) =>
+    small &&
+    `
+    min-height: 7.5rem;
+  `}
 `;
