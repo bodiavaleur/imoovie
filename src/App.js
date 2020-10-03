@@ -9,8 +9,9 @@ import {
   Title,
   TextSmall,
   Link,
+  Poster,
 } from "./components/atoms";
-import { TopSection } from "./components/molecules/";
+import { TopSection, MovieList, TopicTitle } from "./components/molecules/";
 
 export function App() {
   return (
@@ -28,12 +29,33 @@ export function App() {
             </TextSmall>
           </TopSection>
         </ContentContainer>
-        <ContentContainer>te</ContentContainer>
-        <ContentContainer>st</ContentContainer>
-        <ContentContainer>te</ContentContainer>
-        <ContentContainer>te</ContentContainer>
-        <ContentContainer>st</ContentContainer>
-        <ContentContainer>te</ContentContainer>
+        <ContentContainer>
+          <TopicTitle title='Featured' linkLabel='show more' />
+          <MovieList>
+            <Poster />
+            <Poster />
+            <Poster />
+            <Poster />
+          </MovieList>
+        </ContentContainer>
+        <ContentContainer>
+          <TopicTitle title='Featured' linkLabel='show more' />
+          <MovieList>
+            <Poster />
+            <Poster />
+            <Poster />
+            <Poster />
+          </MovieList>
+        </ContentContainer>
+        <ContentContainer>
+          <TopicTitle title='Featured' linkLabel='show more' />
+          <MovieList>
+            <Poster />
+            <Poster />
+            <Poster />
+            <Poster />
+          </MovieList>
+        </ContentContainer>
       </HomePage>
     </Router>
   );
