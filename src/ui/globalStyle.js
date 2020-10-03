@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
       font-size: 16px;
-      background: #333;
+      background: ${theme.mainBg};
   }
 
   html,body, #root {

@@ -6,5 +6,6 @@ export const theme = {
   shadowColor: "",
   hoverColor: "rgba(150,150,150,0.15)",
   darkBg: "#333",
+  mainBg: "#222",
   vibrancyBg: "rgba(30, 30, 30, 0.75)",
 };

@@ -4,9 +4,11 @@ import { theme } from "../../../ui/theme";
 export const ContentContainerUI = styled.section`
   display: flex;
   width: 100%;
-  min-height: 15rem;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1.5rem;
+  background: ${theme.darkBg};
 
   ${({ image }) =>
     image &&
