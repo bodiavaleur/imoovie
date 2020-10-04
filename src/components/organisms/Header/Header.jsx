@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Logo } from "../../atoms";
 import { MobileMenu, Navbar } from "../../molecules/";
 import { HeaderUI } from "./HeaderUI";
 import { useMediaQuery } from "react-responsive";
 import { breakpoints } from "../../../ui/breakpoints";
-import { FaHome } from "react-icons/fa";
 
 const { mobile, tablet } = breakpoints;
 

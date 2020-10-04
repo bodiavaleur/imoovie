@@ -8,4 +8,6 @@ export const theme = {
   darkBg: "#333",
   mainBg: "#222",
   vibrancyBg: "rgba(30, 30, 30, 0.75)",
+  errorColor: "rgb(255,69,58)",
+  successColor: "rgb(48,209,88)",
 };

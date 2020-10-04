@@ -4,6 +4,18 @@ import { theme } from "../../../ui/theme";
 const defaultStyle = css`
   font-size: 1rem;
   color: ${theme.textColor};
+
+  ${({ error }) =>
+    error &&
+    `
+    color: ${theme.errorColor};
+  `}
+
+  ${({ success }) =>
+    success &&
+    `
+    color: ${theme.successColor};
+  `}
 `;
 
 export const Heading = styled.h1`

@@ -9,6 +9,6 @@ export function ButtonIcon(props) {
   return <ButtonIconUI onClick={props.onClick}>{props.children}</ButtonIconUI>;
 }
 
-export function ButtonLink({ children, to }) {
-  return <ButtonLinkUI to={to}>{children}</ButtonLinkUI>;
+export function ButtonLink(props) {
+  return <ButtonLinkUI {...props}>{props.children}</ButtonLinkUI>;
 }

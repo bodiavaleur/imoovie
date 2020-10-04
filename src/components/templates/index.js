@@ -1,1 +1,1 @@
-export { HomePage } from "./HomePage/HomePage";
+export { DefaultTemplate } from "./DefaultTemplate/DefaultTemplate";

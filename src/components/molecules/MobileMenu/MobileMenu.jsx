@@ -16,11 +16,11 @@ export function MobileMenu() {
       </ButtonIcon>
       {openMenu && (
         <MobileMenuUI>
-          <MenuItem>Test</MenuItem>
-          <MenuItem>Test</MenuItem>
-          <MenuItem>Test</MenuItem>
-          <MenuItem>Test</MenuItem>
-          <MenuItem>Test</MenuItem>
+          <MenuItem>Top</MenuItem>
+          <MenuItem>Popular</MenuItem>
+          <MenuItem>Trending</MenuItem>
+          <MenuItem>Watchlist</MenuItem>
+          <MenuItem>Favorites</MenuItem>
         </MobileMenuUI>
       )}
     </>
