@@ -6,7 +6,7 @@ export function TopicTitle({ title, linkLabel, linkTo }) {
   return (
     <TopicTitleUI>
       <Title>{title}</Title>
-      <Link to={linkTo}>{linkLabel}</Link>
+      {linkLabel && <Link to={linkTo}>{linkLabel}</Link>}
     </TopicTitleUI>
   );
 }

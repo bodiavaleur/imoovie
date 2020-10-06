@@ -8,8 +8,8 @@ import { breakpoints } from "../../../ui/breakpoints";
 const { mobile, tablet } = breakpoints;
 
 export function Header() {
-  const isMobile = useMediaQuery({ query: mobile });
-  const isTablet = useMediaQuery({ query: tablet });
+  const isMobile = useMediaQuery({ query: `(${mobile})` });
+  const isTablet = useMediaQuery({ query: `(${tablet})` });
 
   return (
     <HeaderUI>

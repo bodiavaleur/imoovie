@@ -10,7 +10,7 @@ export const DetailsUI = styled.div`
   border-radius: 0.5rem;
   background: #333;
 
-  @media screen and ${breakpoints.tablet} {
+  @media screen and (${breakpoints.tablet}) {
     align-items: center;
   }
 `;
