@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { IconLink } from "../../atoms";
 import { NavbarUI } from "./NavbarUI";
 import { FaHome } from "react-icons/fa";

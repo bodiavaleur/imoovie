@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../../ui/theme";
 
 export const PosterUI = styled.div`
   width: 10rem;

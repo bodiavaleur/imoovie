@@ -18,9 +18,9 @@ export function HomePage({ children }) {
         <TopSection>
           <Heading>Welcome to iMoovie</Heading>
           <Title>Explore millions of movies and TV shows.</Title>
-          <ButtonLink to='/login'>Sign Up</ButtonLink>
+          <ButtonLink to='/signup'>Sign Up</ButtonLink>
           <TextSmall>
-            Already have an account? <Link>Sign In</Link>
+            Already have an account? <Link to='/signin'>Sign In</Link>
           </TextSmall>
         </TopSection>
       </ContentContainer>
