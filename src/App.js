@@ -2,7 +2,12 @@ import React from "react";
 import { GlobalStyle } from "./ui/globalStyle";
 import { Header } from "./components/organisms";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { ContentDetails, HomePage, SignPage } from "./components/pages";
+import {
+  ContentDetails,
+  HomePage,
+  SignPage,
+  TopicContent,
+} from "./components/pages";
 
 export function App() {
   return (
@@ -15,6 +20,7 @@ export function App() {
         <Route exact path='/signup' render={() => <SignPage signUp />} />
         <Route exact path='/signin' render={() => <SignPage signIn />} />
         <Route exact path='/content/:id' component={ContentDetails} />
+        <Route exact path='/topic/:topic' component={TopicContent} />
       </Switch>
     </Router>
   );
