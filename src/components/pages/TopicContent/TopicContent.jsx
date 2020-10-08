@@ -3,6 +3,7 @@ import { TopicContentUI } from "./TopicContentUI";
 import { TopicTitle } from "../../molecules";
 import { Poster } from "../../atoms";
 import { DefaultTemplate } from "../../templates";
+import ReactPaginate from "react-paginate";
 
 export function TopicContent() {
   return (
@@ -25,6 +26,7 @@ export function TopicContent() {
         <Poster />
         <Poster />
       </TopicContentUI>
+      <ReactPaginate />
     </DefaultTemplate>
   );
 }
