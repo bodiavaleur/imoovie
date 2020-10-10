@@ -5,5 +5,6 @@ export const PosterUI = styled.div`
   height: 15rem;
   margin: 0.5rem;
   border-radius: 10px;
-  background: red;
+  background: url(${(props) => props.img});
+  background-size: cover;
 `;
