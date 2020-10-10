@@ -20,7 +20,16 @@ export function App() {
         <Route exact path='/signup' render={() => <SignPage signUp />} />
         <Route exact path='/signin' render={() => <SignPage signIn />} />
         <Route exact path='/content/:id' component={ContentDetails} />
-        <Route exact path='/topic/:topic' component={TopicContent} />
+        <Route
+          exact
+          path='/movies/:topic'
+          render={(props) => (
+            <TopicContent
+              contentType='movies'
+              topic={props.match.params.topic}
+            />
+          )}
+        />
       </Switch>
     </Router>
   );
