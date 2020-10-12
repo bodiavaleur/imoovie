@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   ButtonLink,
   Heading,
@@ -8,10 +8,54 @@ import {
   Poster,
 } from "../../atoms";
 import { ContentContainer } from "../../organisms";
-import { TopSection, MovieList, TopicTitle } from "../../molecules/";
+import {
+  TopSection,
+  MovieList,
+  TopicTitle,
+  ContentPoster,
+} from "../../molecules/";
 import { DefaultTemplate } from "../../templates";
+import { getContentByTopic } from "../../../api";
 
-export function HomePage({ children }) {
+export function HomePage() {
+  const [nowPlaying, setNowPlaying] = useState(null);
+  const [popularMovies, setPopularMovies] = useState(null);
+  const [popularTv, setPopularTv] = useState(null);
+  const [topMovies, setTopMovies] = useState(null);
+  const [topTv, setTopTv] = useState(null);
+
+  const showContent = (data) => {
+    const posterBaseUrl = "http://image.tmdb.org/t/p/w185/";
+
+    return data
+      ? data.map((item) => (
+          <ContentPoster
+            key={item.id}
+            poster={posterBaseUrl + item.poster_path}
+            title={item.title}
+          />
+        ))
+      : null;
+  };
+
+  useEffect(() => {
+    getContentByTopic("movie", "now_playing").then(({ results }) =>
+      setNowPlaying(results.slice(0, 6))
+    );
+    getContentByTopic("movie", "popular").then(({ results }) =>
+      setPopularMovies(results.slice(0, 6))
+    );
+    getContentByTopic("tv", "popular").then(({ results }) =>
+      setPopularTv(results.slice(0, 6))
+    );
+    getContentByTopic("movie", "top_rated").then(({ results }) =>
+      setTopMovies(results.slice(0, 6))
+    );
+    getContentByTopic("tv", "top_rated").then(({ results }) =>
+      setTopTv(results.slice(0, 6))
+    );
+  }, []);
+
   return (
     <DefaultTemplate>
       <ContentContainer image='mainBackground.png' large>
@@ -25,33 +69,44 @@ export function HomePage({ children }) {
         </TopSection>
       </ContentContainer>
       <ContentContainer>
-        <TopicTitle title='Featured' linkLabel='show more' />
-        <MovieList>
-          <Poster />
-          <Poster />
-          <Poster />
-          <Poster />
-          <Poster />
-          <Poster />
-        </MovieList>
+        <TopicTitle
+          title='Now Playing Movies'
+          linkLabel='See All'
+          linkTo='/movie/now_playing'
+        />
+        <MovieList>{showContent(nowPlaying)}</MovieList>
       </ContentContainer>
       <ContentContainer>
-        <TopicTitle title='Featured' linkLabel='show more' />
-        <MovieList>
-          <Poster />
-          <Poster />
-          <Poster />
-          <Poster />
-        </MovieList>
+        <TopicTitle
+          title='Popular Movies'
+          linkLabel='See All'
+          linkTo='/movie/popular'
+        />
+        <MovieList>{showContent(popularMovies)}</MovieList>
       </ContentContainer>
       <ContentContainer>
-        <TopicTitle title='Featured' linkLabel='show more' />
-        <MovieList>
-          <Poster />
-          <Poster />
-          <Poster />
-          <Poster />
-        </MovieList>
+        <TopicTitle
+          title='Popular TV Shows'
+          linkLabel='See All'
+          linkTo='/tv/popular'
+        />
+        <MovieList>{showContent(popularTv)}</MovieList>
+      </ContentContainer>
+      <ContentContainer>
+        <TopicTitle
+          title='Top Rated Movies'
+          linkLabel='See All'
+          linkTo='/movie/top_rated'
+        />
+        <MovieList>{showContent(topMovies)}</MovieList>
+      </ContentContainer>
+      <ContentContainer>
+        <TopicTitle
+          title='Top Rated TV Shows'
+          linkLabel='See All'
+          linkTo='/tv/top_rated'
+        />
+        <MovieList>{showContent(topTv)}</MovieList>
       </ContentContainer>
     </DefaultTemplate>
   );
