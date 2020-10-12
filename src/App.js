@@ -22,10 +22,10 @@ export function App() {
         <Route exact path='/content/:id' component={ContentDetails} />
         <Route
           exact
-          path='/movies/:topic'
+          path='/movie/:topic'
           render={(props) => (
             <TopicContent
-              contentType='movies'
+              contentType='movie'
               topic={props.match.params.topic}
             />
           )}

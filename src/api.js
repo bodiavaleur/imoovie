@@ -4,9 +4,9 @@ const api = axios.create({
   baseURL: "https://api.themoviedb.org/3",
 });
 
-export const getMoviesByTopic = async (topic, page = 1) => {
+export const getContentByTopic = async (contentType, topic, page = 1) => {
   const topicData = await api.get(
-    `/movie/${topic}?api_key=${apiKey}&page=${page}`
+    `/${contentType}/${topic}?api_key=${apiKey}&page=${page}`
   );
   return topicData.data;
 };
