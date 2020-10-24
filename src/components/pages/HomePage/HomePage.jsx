@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  ButtonLink,
-  Heading,
-  Title,
-  TextSmall,
-  Link,
-  Poster,
-} from "../../atoms";
+import { ButtonLink, Heading, Title, TextSmall, Link } from "../../atoms";
 import { ContentContainer } from "../../organisms";
 import {
   TopSection,
