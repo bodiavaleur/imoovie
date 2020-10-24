@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
-import { ButtonIcon, MenuItem } from "../../atoms";
+import { ButtonIcon, Link, MenuLink } from "../../atoms";
 import { MobileMenuUI } from "./MobileMenuUI";
 
 export function MobileMenu() {
@@ -16,11 +16,10 @@ export function MobileMenu() {
       </ButtonIcon>
       {openMenu && (
         <MobileMenuUI>
-          <MenuItem>Top</MenuItem>
-          <MenuItem>Popular</MenuItem>
-          <MenuItem>Trending</MenuItem>
-          <MenuItem>Watchlist</MenuItem>
-          <MenuItem>Favorites</MenuItem>
+          <MenuLink to='/search'>Search</MenuLink>
+          <MenuLink to='/watchlist'>Watchlis</MenuLink>
+          <MenuLink to='/favorites'>Favorites</MenuLink>
+          <MenuLink to='/signout'>Signout</MenuLink>
         </MobileMenuUI>
       )}
     </>

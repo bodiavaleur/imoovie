@@ -5,3 +5,4 @@ export { MovieList } from "./MovieList/MovieList";
 export { TopicTitle } from "./TopicTitle/TopicTitle";
 export { ContentPoster } from "./ContentPoster/ContentPoster";
 export { Details } from "./Details/Details";
+export { Pagination } from "./Pagination/Pagination";

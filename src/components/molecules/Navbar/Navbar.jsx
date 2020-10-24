@@ -1,16 +1,15 @@
 import React from "react";
 import { IconLink } from "../../atoms";
 import { NavbarUI } from "./NavbarUI";
-import { FaHome } from "react-icons/fa";
+import { FaClock, FaSearch, FaStar, FaUserAltSlash } from "react-icons/fa";
 
 export function Navbar() {
   return (
     <NavbarUI>
-      <IconLink to='/' icon={<FaHome />} label='Search' />
-      <IconLink to='/' icon={<FaHome />} label='Popular' />
-      <IconLink to='/' icon={<FaHome />} label='Trending' />
-      <IconLink to='/' icon={<FaHome />} label='Watchlist' />
-      <IconLink to='/' icon={<FaHome />} label='Favorites' />
+      <IconLink to='/search' icon={<FaSearch />} label='Search' />
+      <IconLink to='/watchlist' icon={<FaClock />} label='Watchlist' />
+      <IconLink to='/favorites' icon={<FaStar />} label='Favorites' />
+      <IconLink to='/signout' icon={<FaUserAltSlash />} label='Signout' />
     </NavbarUI>
   );
 }

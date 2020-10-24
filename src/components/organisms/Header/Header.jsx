@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo } from "../../atoms";
+import { Logo, InputSearch } from "../../atoms";
 import { MobileMenu, Navbar } from "../../molecules/";
 import { HeaderUI } from "./HeaderUI";
 import { useMediaQuery } from "react-responsive";
@@ -14,7 +14,6 @@ export function Header() {
   return (
     <HeaderUI>
       <Logo />
-
       {isMobile || isTablet ? <MobileMenu /> : <Navbar />}
     </HeaderUI>
   );

@@ -6,4 +6,11 @@ export const PosterUI = styled.div`
   border-radius: 10px;
   background: url(${(props) => props.img});
   background-size: cover;
+
+  ${({ small }) =>
+    small &&
+    `
+    width: 4rem;
+    height: 6rem;
+  `}
 `;

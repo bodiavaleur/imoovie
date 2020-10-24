@@ -25,14 +25,12 @@ export function HomePage() {
   const [topTv, setTopTv] = useState(null);
 
   const showContent = (data) => {
-    const posterBaseUrl = "http://image.tmdb.org/t/p/w185/";
-
     return data
       ? data.map((item) => (
           <ContentPoster
             key={item.id}
-            poster={posterBaseUrl + item.poster_path}
-            title={item.title}
+            poster={item.poster_path}
+            title={item.title || item.original_name}
           />
         ))
       : null;
@@ -40,19 +38,19 @@ export function HomePage() {
 
   useEffect(() => {
     getContentByTopic("movie", "now_playing").then(({ results }) =>
-      setNowPlaying(results.slice(0, 6))
+      setNowPlaying(results.slice(0, 4))
     );
     getContentByTopic("movie", "popular").then(({ results }) =>
-      setPopularMovies(results.slice(0, 6))
+      setPopularMovies(results.slice(0, 4))
     );
     getContentByTopic("tv", "popular").then(({ results }) =>
-      setPopularTv(results.slice(0, 6))
+      setPopularTv(results.slice(0, 4))
     );
     getContentByTopic("movie", "top_rated").then(({ results }) =>
-      setTopMovies(results.slice(0, 6))
+      setTopMovies(results.slice(0, 4))
     );
     getContentByTopic("tv", "top_rated").then(({ results }) =>
-      setTopTv(results.slice(0, 6))
+      setTopTv(results.slice(0, 4))
     );
   }, []);
 

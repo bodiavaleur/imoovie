@@ -7,6 +7,7 @@ import {
   HomePage,
   SignPage,
   TopicContent,
+  SearchPage,
 } from "./components/pages";
 
 export function App() {
@@ -19,6 +20,7 @@ export function App() {
         <Route exact path='/' component={HomePage} />
         <Route exact path='/signup' render={() => <SignPage signUp />} />
         <Route exact path='/signin' render={() => <SignPage signIn />} />
+        <Route exact path='/search' component={SearchPage} />
         <Route exact path='/content/:id' component={ContentDetails} />
         <Route
           exact

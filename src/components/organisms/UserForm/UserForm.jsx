@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import { UserFormUI } from "./UserFormUI";
 import { Button, Input, TextSmall } from "../../atoms";
+import { signUpUser, signInUser } from "../../../firebase/firebaseApi";
 
 const validate = (values) => {
   const errors = {};
@@ -28,15 +29,20 @@ const validate = (values) => {
 };
 
 export function UserForm({ signUp, signIn }) {
+  const [error, setError] = useState("");
   // Show content depending on mode (sign up or sign in)
   const signMode = (sup, sin) => (signUp ? sup : signIn ? sin : null);
 
   const submitSignUpFn = (values) => {
-    console.log("signup :>> ", values);
+    signUpUser(values.email, values.password)
+      .then((data) => console.log(data))
+      .catch((err) => setError(err.message));
   };
 
   const submitSignInFn = (values) => {
-    console.log("signin :>> ", values);
+    signInUser(values.email, values.password)
+      .then((data) => console.log(data))
+      .catch((err) => setError(err.message));
   };
 
   const formik = useFormik({
@@ -69,6 +75,7 @@ export function UserForm({ signUp, signIn }) {
       />
       {passwordError && <TextSmall error>{passwordError}</TextSmall>}
       <Button type='submit'>{signMode("Sign Up", "Sign In")}</Button>
+      {error && <TextSmall error>{error}</TextSmall>}
     </UserFormUI>
   );
 }

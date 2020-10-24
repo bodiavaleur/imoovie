@@ -15,6 +15,11 @@ export const GlobalStyle = createGlobalStyle`
       background: ${theme.mainBg};
   }
 
+  html, body, #root {
+    min-height: 100% !important;
+    height: 100%;
+  }
+
   .pagination {
     display: flex;
     width: 100%;
