@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo, InputSearch } from "../../atoms";
+import { Logo } from "../../atoms";
 import { MobileMenu, Navbar } from "../../molecules/";
 import { HeaderUI } from "./HeaderUI";
 import { useMediaQuery } from "react-responsive";
