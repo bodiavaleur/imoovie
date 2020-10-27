@@ -9,6 +9,9 @@ import {
   TopicContent,
   SearchPage,
 } from "./components/pages";
+import { routes } from "./routes";
+
+const { HOME, SIGNUP, SIGNIN, SEARCH, CONTENT, TOPIC } = routes;
 
 export function App() {
   return (
@@ -17,14 +20,14 @@ export function App() {
       <Header />
 
       <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route exact path='/signup' render={() => <SignPage signUp />} />
-        <Route exact path='/signin' render={() => <SignPage signIn />} />
-        <Route exact path='/search' component={SearchPage} />
-        <Route exact path='/content/:id' component={ContentDetails} />
+        <Route exact path={HOME} component={HomePage} />
+        <Route exact path={SIGNUP} render={() => <SignPage signUp />} />
+        <Route exact path={SIGNIN} render={() => <SignPage signIn />} />
+        <Route exact path={SEARCH} component={SearchPage} />
+        <Route exact path={CONTENT + ":id"} component={ContentDetails} />
         <Route
           exact
-          path='/movie/:topic'
+          path={TOPIC + ":topic"}
           render={(props) => (
             <TopicContent
               contentType='movie'

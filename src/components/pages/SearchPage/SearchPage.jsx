@@ -9,6 +9,9 @@ import {
 } from "../../molecules";
 import { InputSearch } from "../../atoms";
 import { searchContent } from "../../../api";
+import { routes } from "../../../routes";
+
+const { CONTENT } = routes;
 
 export function SearchPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,8 +24,6 @@ export function SearchPage() {
   useEffect(() => {
     searchContent(searchQuery, page).then((data) => setSearchData(data));
   }, [searchQuery, page]);
-
-  console.log("searchData :>> ", searchData);
 
   return (
     <DefaultTemplate>
@@ -37,6 +38,7 @@ export function SearchPage() {
                 <ContentPoster
                   poster={content.poster_path}
                   title={content.title}
+                  link={CONTENT + content.imdb_id}
                 />
               ))}
             </MovieList>

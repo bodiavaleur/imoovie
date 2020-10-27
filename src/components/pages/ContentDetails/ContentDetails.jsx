@@ -1,23 +1,33 @@
-import React from "react";
-import { Poster } from "../../atoms";
-import { Details } from "../../molecules";
+import React, { useEffect, useState } from "react";
+import { findById } from "../../../api";
+import { ContentPoster, Details } from "../../molecules";
 import { DefaultTemplate } from "../../templates/";
 import { ContentDetailsUI } from "./ContentDetailsUI";
 
 export function ContentDetails(props) {
+  const [details, setDetails] = useState(null);
+  const contentId = props.match.params.id;
+
+  useEffect(() => {
+    findById(contentId).then((data) => setDetails(data));
+  }, [contentId]);
+
+  console.log("details :>> ", details);
+
   return (
     <DefaultTemplate>
       <ContentDetailsUI>
-        <Poster />
-        <Details
-          title='From dusk till dawn'
-          movieYear={1990}
-          rating={5.0}
-          description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eos
-          pariatur tempora accusamus, similique nemo debitis molestias. Quod,
-          necessitatibus quia incidunt nobis excepturi, nesciunt, consectetur
-          error laudantium placeat at voluptatibus.'
-        />
+        {details && (
+          <>
+            <ContentPoster poster={details.poster_path} title='' />
+            <Details
+              title={details.title}
+              movieYear={details.release_date.split("-")[0]}
+              rating={details.vote_average}
+              description={details.overview}
+            />
+          </>
+        )}
       </ContentDetailsUI>
     </DefaultTemplate>
   );

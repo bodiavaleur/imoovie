@@ -13,8 +13,20 @@ export const getContentByTopic = async (contentType, topic, page = 1) => {
 };
 
 export const searchContent = async (query, page = 1) => {
+  /* Search movie, TV show, actor, etc. */
   const searchData = await api.get(
     `/search/multi?api_key=${apiKey}&query=${query}&page=${page}`
   );
   return searchData.data;
+};
+
+export const findById = async (contentId) => {
+  /* Find details of content by IMDB id */
+  const content = await api.get(
+    `/find/${contentId}?api_key=${apiKey}&external_source=imdb_id`
+  );
+  let data = content.data;
+  // Find matched element from topics and pick first one
+  data = Object.values(data).find((findData) => !!findData)[0];
+  return data;
 };

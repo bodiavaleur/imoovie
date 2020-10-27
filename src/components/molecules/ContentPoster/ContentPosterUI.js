@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { theme } from "../../../ui/theme";
+import { Link } from "react-router-dom";
 
-export const ContentPosterUI = styled.div`
+export const ContentPosterUI = styled(Link)`
   display: flex;
   width: 10rem;
   height: 17rem;
@@ -9,6 +10,7 @@ export const ContentPosterUI = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 0.5rem;
+  text-decoration: none;
 `;
 
 export const ContentPosterTitle = styled.p`
