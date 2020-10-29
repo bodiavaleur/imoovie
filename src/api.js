@@ -9,6 +9,9 @@ export const getContentByTopic = async (contentType, topic, page = 1) => {
   const topicData = await api.get(
     `/${contentType}/${topic}?api_key=${apiKey}&page=${page}`
   );
+  topicData.data.results.forEach(
+    (content) => (content["media_type"] = contentType)
+  );
   return topicData.data;
 };
 
@@ -20,13 +23,11 @@ export const searchContent = async (query, page = 1) => {
   return searchData.data;
 };
 
-export const findById = async (contentId) => {
+export const findById = async (type, contentId) => {
   /* Find details of content by IMDB id */
-  const content = await api.get(
-    `/find/${contentId}?api_key=${apiKey}&external_source=imdb_id`
-  );
-  let data = content.data;
+  const findData = await api.get(`/${type}/${contentId}?api_key=${apiKey}`);
   // Find matched element from topics and pick first one
-  data = Object.values(data).find((findData) => !!findData)[0];
-  return data;
+  // data = Object.values(data).find((findData) => !!findData)[0];
+  debugger;
+  return findData.data;
 };

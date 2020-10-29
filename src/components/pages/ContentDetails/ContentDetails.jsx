@@ -6,11 +6,12 @@ import { ContentDetailsUI } from "./ContentDetailsUI";
 
 export function ContentDetails(props) {
   const [details, setDetails] = useState(null);
+  const contentType = props.match.params.type;
   const contentId = props.match.params.id;
 
   useEffect(() => {
-    findById(contentId).then((data) => setDetails(data));
-  }, [contentId]);
+    findById(contentType, contentId).then((data) => setDetails(data));
+  }, [contentType, contentId]);
 
   console.log("details :>> ", details);
 

@@ -18,7 +18,12 @@ export function TopicContent({ contentType, topic }) {
   const onPageChange = ({ selected }) => setPage(selected + 1);
 
   const showContent = (item) => (
-    <ContentPoster key={item.id} poster={item.poster_path} title={item.title} />
+    <ContentPoster
+      key={item.id}
+      poster={item.poster_path}
+      title={item.title}
+      link={`/content/${item.media_type}/${item.id}`}
+    />
   );
 
   useEffect(() => {

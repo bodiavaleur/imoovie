@@ -24,6 +24,7 @@ export function HomePage() {
             key={item.id}
             poster={item.poster_path}
             title={item.title || item.original_name}
+            link={`/content/${item.media_type}/${item.id}`}
           />
         ))
       : null;
