@@ -1,5 +1,6 @@
 export { IconLink } from "./IconLink/IconLink";
 export { Logo } from "./Logo/Logo";
+export { Tag } from "./Tag/Tag";
 export { Link } from "./Link/Link";
 export { Input, InputSearch } from "./Input/Input";
 export { Poster } from "./Poster/Poster";
