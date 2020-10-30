@@ -26,8 +26,5 @@ export const searchContent = async (query, page = 1) => {
 export const findById = async (type, contentId) => {
   /* Find details of content by IMDB id */
   const findData = await api.get(`/${type}/${contentId}?api_key=${apiKey}`);
-  // Find matched element from topics and pick first one
-  // data = Object.values(data).find((findData) => !!findData)[0];
-  debugger;
   return findData.data;
 };

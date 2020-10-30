@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { theme } from "./theme";
+import { breakpoints } from "./breakpoints";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -15,10 +16,7 @@ export const GlobalStyle = createGlobalStyle`
       background: ${theme.mainBg};
   }
 
-  html, body, #root {
-    min-height: 100% !important;
-    height: 100%;
-  }
+  
 
   .pagination {
     display: flex;
@@ -35,6 +33,12 @@ export const GlobalStyle = createGlobalStyle`
 
     &__page {
       
+    }
+  }
+
+  @media screen and (${breakpoints.mobile}) {
+    html {
+      font-size: 13px;
     }
   }
 `;

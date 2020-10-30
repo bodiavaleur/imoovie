@@ -9,6 +9,7 @@ export const HeaderUI = styled.header`
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  z-index: 9;
   top: 0;
   left: 0;
   background: ${theme.vibrancyBg};
