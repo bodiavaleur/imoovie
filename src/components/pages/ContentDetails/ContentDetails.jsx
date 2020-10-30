@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { findById } from "../../../api";
 import { Poster } from "../../atoms";
-import { Details } from "../../molecules";
+import { ActionButtons, Details } from "../../molecules";
 import { DefaultTemplate } from "../../templates/";
 import { ContentDetailsHeadUI, ContentDetailsUI } from "./ContentDetailsUI";
 
@@ -25,6 +25,7 @@ export function ContentDetails(props) {
             >
               <Poster img={details.poster_path} size='big' />
             </ContentDetailsHeadUI>
+            <ActionButtons />
             <Details details={details} />
           </>
         )}

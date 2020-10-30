@@ -7,5 +7,5 @@ export const DetailsUI = styled.div`
   flex-flow: column nowrap;
   justify-content: space-evenly;
   align-items: center;
-  padding: 1rem;
+  padding: 0 1rem;
 `;

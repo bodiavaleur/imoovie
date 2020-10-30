@@ -16,6 +16,12 @@ const defaultStyle = css`
     `
     color: ${theme.successColor};
   `}
+
+${({ transparent }) =>
+    transparent &&
+    `
+    opacity: 0.5;
+  `}
 `;
 
 export const Heading = styled.h1`

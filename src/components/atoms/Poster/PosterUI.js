@@ -23,6 +23,7 @@ const handleSize = (size) => {
 export const PosterUI = styled.div`
   ${(props) => handleSize(props.size)}
 
+  border: 0.30rem solid white;
   border-radius: 10px;
   background: url(${(props) => props.img});
   background-size: cover;

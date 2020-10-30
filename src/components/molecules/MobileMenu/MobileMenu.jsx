@@ -20,9 +20,18 @@ export function MobileMenu() {
       {openMenu && (
         <MobileMenuUI>
           <MenuLink to='/search'>Search</MenuLink>
-          <MenuLink to='/watchlist'>Watchlis</MenuLink>
-          <MenuLink to='/favorites'>Favorites</MenuLink>
-          {user && <MenuLink to='/signout'>Signout</MenuLink>}
+          {user ? (
+            <>
+              <MenuLink to='/watchlist'>Watchlist</MenuLink>
+              <MenuLink to='/favorites'>Favorites</MenuLink>
+              <MenuLink to='/signout'>Signout</MenuLink>
+            </>
+          ) : (
+            <>
+              <MenuLink to='/signup'>Sign up</MenuLink>
+              <MenuLink to='/signin'>Sign in</MenuLink>
+            </>
+          )}
         </MobileMenuUI>
       )}
     </>

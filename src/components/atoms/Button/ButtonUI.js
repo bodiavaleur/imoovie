@@ -3,16 +3,23 @@ import { Link } from "react-router-dom";
 import { theme } from "../../../ui/theme";
 
 export const ButtonUI = styled.button`
-  display: block;
+  display: inline-block;
   min-height: 2rem;
-  width: 6rem;
+  min-width: 6rem;
+  max-width: 10rem;
   margin: 0.75rem;
   padding: 5px 10px;
+  line-height: 1.5rem;
   font-size: 1rem;
+  font-weight: 500;
   border: none;
   border-radius: 5px;
   background: ${theme.primaryColor};
   color: ${theme.textColor};
+
+  svg {
+    fill: ${theme.textColor};
+  }
 `;
 
 export const ButtonIconUI = styled.button`
