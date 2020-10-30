@@ -6,3 +6,5 @@ export { TopicTitle } from "./TopicTitle/TopicTitle";
 export { ContentPoster } from "./ContentPoster/ContentPoster";
 export { Details } from "./Details/Details";
 export { Pagination } from "./Pagination/Pagination";
+export { TagsLine } from "./TagsLine/TagsLine";
+export { ActionButtons } from "./ActionButtons/ActionButtons";
