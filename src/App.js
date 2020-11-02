@@ -8,6 +8,8 @@ import {
   SignPage,
   TopicContent,
   SearchPage,
+  FavoritesPage,
+  WatchlistPage,
 } from "./components/pages";
 
 export function App() {
@@ -21,6 +23,8 @@ export function App() {
         <Route exact path='/signup' render={() => <SignPage signUp />} />
         <Route exact path='/signin' render={() => <SignPage signIn />} />
         <Route exact path='/search' component={SearchPage} />
+        <Route exact path='/favorites' component={FavoritesPage} />
+        <Route exact path='/watchlist' component={WatchlistPage} />
         <Route exact path='/content/:type/:id' component={ContentDetails} />
         <Route
           exact
