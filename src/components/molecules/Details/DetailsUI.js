@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DetailsUI = styled.div`
-  width: 100%;
+  width: 40rem;
   min-height: 20rem;
   display: flex;
   flex-flow: column nowrap;

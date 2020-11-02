@@ -25,7 +25,7 @@ export function ContentDetails(props) {
             >
               <Poster img={details.poster_path} size='big' />
             </ContentDetailsHeadUI>
-            <ActionButtons />
+            <ActionButtons content={details} type={contentType} />
             <Details details={details} />
           </>
         )}
