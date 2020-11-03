@@ -56,7 +56,13 @@ export const addUserContent = async (addTo, userId, content, type, isExist) => {
   let data = doc.data();
 
   if (isExist) {
+    // to remove from data if already exist
     data[addTo] = data[addTo].filter((item) => item.id !== content.id);
+
+    return userData.set({
+      ...data,
+      [addTo]: data[addTo],
+    });
   }
 
   return userData.set({
